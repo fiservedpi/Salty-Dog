@@ -1,5 +1,23 @@
 <p align="center">
+<<<<<<< HEAD
   <img src="./assets/py-vault-logo.jpg" alt="Py Vault logo — a secure vault emblem" width="320" />
+=======
+  <img
+    src="./src/py_vault/assets/py-vault-logo.jpg"
+    alt="Py Vault logo — a secure vault emblem"
+    width="260"
+  />
+</p>
+
+<h1 align="center">🔐 <code>Py Vault</code></h1>
+
+<p align="center">
+  <strong>A local-first, encrypted secrets vault for Python.</strong>
+</p>
+
+<p align="center">
+  <sub>PRIVATE • PORTABLE • SELF-HOSTED</sub>
+>>>>>>> 189c1d27f48fa1ccdbefc1a2c33c9780444adf18
 </p>
 
 <h1 align="center">Py Vault</h1>
