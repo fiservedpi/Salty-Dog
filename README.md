@@ -1,4 +1,20 @@
-# Py Vault
+<p align="center">
+  <img
+    src="./src/py_vault/assets/py-vault-logo.jpg"
+    alt="Py Vault logo — a secure vault emblem"
+    width="260"
+  />
+</p>
+
+<h1 align="center">🔐 <code>Py Vault</code></h1>
+
+<p align="center">
+  <strong>A local-first, encrypted secrets vault for Python.</strong>
+</p>
+
+<p align="center">
+  <sub>PRIVATE • PORTABLE • SELF-HOSTED</sub>
+</p>
 
 A lightweight, local-first Python vault for storing and retrieving secrets securely from the command line or your own applications.
 
