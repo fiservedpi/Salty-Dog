@@ -1,8 +1,14 @@
-# Py Vault
+<p align="center">
+  <img src="./assets/py-vault-logo.jpg" alt="Py Vault logo — a secure vault emblem" width="320" />
+</p>
 
-A lightweight, local-first Python vault for storing and retrieving secrets securely from the command line or your own applications.
+<h1 align="center">Py Vault</h1>
 
-> Replace the example commands, package name, and configuration details below with the exact interfaces used by your project.
+<p align="center">
+  A lightweight, local-first Python vault for securely storing and retrieving secrets from the command line or your applications.
+</p>
+
+> **Note:** Replace the example commands, package name, and configuration details below with the exact interfaces implemented by your project.
 
 ## Features
 
@@ -11,8 +17,8 @@ A lightweight, local-first Python vault for storing and retrieving secrets secur
 - Command-line workflow for managing vault entries
 - Master-password-based access
 - JSON-friendly values for structured configuration
-- Export/import support for backups and migration
-- Designed to be small, auditable, and easy to self-host
+- Export and import support for backups and migration
+- Small, auditable, and easy to self-host
 
 ## Requirements
 
@@ -22,7 +28,7 @@ A lightweight, local-first Python vault for storing and retrieving secrets secur
 
 ## Installation
 
-Clone the repository and create an isolated Python environment:
+Clone the repository, then create and activate an isolated Python environment:
 
 ```bash
 git clone https://github.com/<your-user>/py-vault.git
@@ -32,11 +38,11 @@ python -m venv .venv
 source .venv/bin/activate        # Linux/macOS
 # .venv\Scripts\Activate.ps1     # PowerShell
 
-pip install -U pip
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-If the project is packaged, install it in editable mode during development:
+If the project is packaged, install it in editable mode for development:
 
 ```bash
 pip install -e .
@@ -50,7 +56,7 @@ Initialize a new vault:
 py-vault init
 ```
 
-You will be prompted to create a master password. Use a strong, unique password and store it in a password manager. The password is required to decrypt the vault; losing it may make the stored data unrecoverable.
+You will be prompted to create a master password. Use a strong, unique password stored in a password manager. It is required to decrypt the vault; if it is lost, stored data may be unrecoverable.
 
 Add a secret:
 
@@ -78,7 +84,7 @@ py-vault delete github.token
 
 ## Python usage
 
-Use Py Vault directly in a Python project when secrets need to remain outside source control and plaintext configuration files.
+Use Py Vault in Python applications when secrets should remain outside source control and plaintext configuration files.
 
 ```python
 from py_vault import Vault
@@ -99,7 +105,7 @@ vault.set("home_assistant.token", "example-long-lived-access-token")
 vault.save()
 ```
 
-For structured data, store JSON-compatible objects if supported by your vault implementation:
+Store JSON-compatible structured values if your vault implementation supports them:
 
 ```python
 vault.set("service.config", {
@@ -112,7 +118,7 @@ vault.save()
 
 ## Configuration
 
-By default, Py Vault should keep its encrypted vault file outside the repository. A conventional location is:
+By default, keep the encrypted vault file outside the repository. Conventional paths include:
 
 | Platform | Suggested location |
 | --- | --- |
@@ -142,12 +148,12 @@ py-vault set <key> <value>    Create or update a value
 py-vault get <key>            Read a value
 py-vault list                 List stored keys
 py-vault delete <key>         Delete a value
-py-vault export <file>        Create an encrypted backup/export
+py-vault export <file>        Create an encrypted backup or export
 py-vault import <file>        Restore or merge an export
 py-vault change-password      Rotate the master password
 ```
 
-Run the built-in help for the authoritative options supported by your version:
+Use the built-in help for the authoritative options supported by your version:
 
 ```bash
 py-vault --help
@@ -158,8 +164,8 @@ py-vault <command> --help
 
 - Treat the master password as the root credential for all vault contents.
 - Never place real secrets in examples, issue reports, CI logs, screenshots, or shell history.
-- Keep the encrypted vault backed up in a location separate from the device running it.
-- Restrict vault-file permissions to the account that owns it.
+- Back up the encrypted vault in a location separate from the device running it.
+- Restrict vault-file permissions to the account that owns the vault.
 - Prefer environment variables, secret stores, or CI secret managers when injecting a vault password into automated workflows.
 - Rotate credentials immediately if a secret may have been exposed.
 
@@ -188,17 +194,19 @@ ruff check .
 
 ```text
 py-vault/
-├── py_vault/             # Application package
-├── tests/                # Automated tests
-├── requirements.txt      # Runtime dependencies
-├── requirements-dev.txt  # Development dependencies
-├── pyproject.toml        # Build and tool configuration
-└── README.md             # Project documentation
+├── assets/
+│   └── py-vault-logo.jpg  # Project logo
+├── py_vault/              # Application package
+├── tests/                 # Automated tests
+├── requirements.txt       # Runtime dependencies
+├── requirements-dev.txt   # Development dependencies
+├── pyproject.toml         # Build and tool configuration
+└── README.md              # Project documentation
 ```
 
 ## Backup and recovery
 
-Back up the encrypted vault file regularly. Test recovery by restoring a copy on another machine or in an isolated directory. A backup is only useful if it is both readable and protected by a master password you still have access to.
+Back up the encrypted vault file regularly. Test recovery by restoring a copy on another machine or in an isolated directory. A backup is useful only when it remains readable and protected by a master password you can still access.
 
 Example:
 
@@ -216,7 +224,7 @@ Store backups in an encrypted, access-controlled location. Do not rely on a sing
 4. Run the test and lint commands.
 5. Open a pull request with a clear description of the change.
 
-Please do not submit live credentials, encrypted vault files, or decrypted exports in pull requests.
+Do not submit live credentials, encrypted vault files, or decrypted exports in pull requests.
 
 ## License
 
@@ -225,4 +233,3 @@ Add the project license here, for example:
 ```text
 MIT License
 ```
-
