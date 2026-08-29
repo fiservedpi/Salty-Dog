@@ -2,3 +2,15 @@
 /.venv/
 /dist/
 /src/*.egg-info/
+# Python bytecode and packaging output
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Python virtual environments
+.venv/
+venv/
+
+# Test/tool caches
+.pytest_cache/
+.ruff_cache/
