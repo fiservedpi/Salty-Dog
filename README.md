@@ -1,7 +1,4 @@
 <p align="center">
-<<<<<<< HEAD
-  <img src="./assets/py-vault-logo.jpg" alt="Py Vault logo — a secure vault emblem" width="320" />
-=======
   <img
     src="./src/py_vault/assets/py-vault-logo.jpg"
     alt="Py Vault logo — a secure vault emblem"
@@ -17,13 +14,6 @@
 
 <p align="center">
   <sub>PRIVATE • PORTABLE • SELF-HOSTED</sub>
->>>>>>> 189c1d27f48fa1ccdbefc1a2c33c9780444adf18
-</p>
-
-<h1 align="center">Py Vault</h1>
-
-<p align="center">
-  A lightweight, local-first Python vault for securely storing and retrieving secrets from the command line or your applications.
 </p>
 
 > **Note:** Replace the example commands, package name, and configuration details below with the exact interfaces implemented by your project.
