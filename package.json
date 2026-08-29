@@ -4,40 +4,38 @@
   "description": "Salty-Dog command-line utility",
   "license": "MIT",
   "type": "module",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fiservedpi/Salty-Dog.git"
   },
-
   "bugs": {
     "url": "https://github.com/fiservedpi/Salty-Dog/issues"
   },
-
   "homepage": "https://github.com/fiservedpi/Salty-Dog#readme",
-
   "publishConfig": {
     "access": "public"
   },
-
   "bin": {
     "salty-dog": "./bin/salty-dog.js"
   },
-
-"files": [
-  "bin",
-  "index.js",
-  "README.md",
-  "LICENSE"
-],
-
+  "files": [
+    "bin",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=20"
   },
-
   "scripts": {
     "start": "node bin/salty-dog.js",
     "test": "node --test",
     "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "npm": "^12.0.2"
+  },
+  "devDependencies": {
+    "@types/npm": "^7.19.3"
   }
 }
