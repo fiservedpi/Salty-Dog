@@ -2,6 +2,7 @@ import argparse
 from getpass import getpass
 from pathlib import Path
 
+from .generator import generate_passphrase
 from .vault import Vault
 
 
@@ -54,6 +55,23 @@ def main() -> int:
         help="Secret name to retrieve.",
     )
     get_parser.set_defaults(func=handle_get)
+
+    generate_parser = subparsers.add_parser(
+        "generate",
+        help="Generate a secure random passphrase.",
+    )
+    generate_parser.add_argument(
+        "--words",
+        type=int,
+        default=6,
+        help="Number of words to include; default: 6.",
+    )
+    generate_parser.add_argument(
+        "--separator",
+        default="-",
+        help='Character placed between words; default: "-".',
+    )
+    generate_parser.set_defaults(func=handle_generate)
 
     args = parser.parse_args()
     return args.func(args)
@@ -121,4 +139,18 @@ def handle_get(args: argparse.Namespace) -> int:
         return 1
 
     print(vault.data[args.key])
+    return 0
+
+
+def handle_generate(args: argparse.Namespace) -> int:
+    try:
+        passphrase = generate_passphrase(
+            words_count=args.words,
+            separator=args.separator,
+        )
+    except ValueError as error:
+        print(f"Error: {error}")
+        return 1
+
+    print(passphrase)
     return 0
