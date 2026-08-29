@@ -48,9 +48,9 @@ dev = [
 py-vault = "py_vault.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/YOUR_GITHUB_USER/py-vault"
-Repository = "https://github.com/YOUR_GITHUB_USER/py-vault"
-Issues = "https://github.com/YOUR_GITHUB_USER/py-vault/issues"
+Homepage = "https://github.com/fiservedpi/py-vault"
+Repository = "https://github.com/fiservedpi/py-vault"
+Issues = "https://github.com/fiservedpi/py-vault/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
