@@ -1,9 +1,11 @@
-import json
-from importlib.resources import files
-
-
-def get_default_config() -> dict:
-    asset = files("py_vault").joinpath("assets/default_config.json")
-
-    with asset.open("r", encoding="utf-8") as file:
-        return json.load(file)
+{
+  "vault_filename": "vault.enc",
+  "vault_directory": "~/.py-vault",
+  "encryption": {
+    "algorithm": "fernet",
+    "key_derivation": "scrypt"
+  },
+  "security": {
+    "auto_lock_minutes": 15
+  }
+}
