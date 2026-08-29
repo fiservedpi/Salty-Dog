@@ -1,0 +1,28 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Tests and local tooling
+tests/
+.pytest_cache/
+.ruff_cache/
+coverage/
+.github/
+.vscode/
+
+# Sensitive/local files
+.env
+.env.*
+*.log
+
+# Python source stays in PyPI distribution, not npm
+src/
+
+# Let npm include the explicitly allowlisted files from package.json
+!bin/
+!npm/
+!README.md
+!LICENSE
