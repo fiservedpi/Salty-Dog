@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-vault"
+version = "0.1.0"
+description = "A lightweight encrypted local vault for Python secrets."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Fiserved Pi" }
+]
+keywords = [
+    "vault",
+    "secrets",
+    "encryption",
+    "security",
+    "credentials",
+    "password-manager"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
+
+dependencies = [
+    "cryptography>=42.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2",
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+py-vault = "py_vault.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/fiservedpi/py-vault"
+Repository = "https://github.com/fiservedpi/py-vault"
+Issues = "https://github.com/fiservedpi/py-vault/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+py_vault = [
+    "assets/*.json",
+    "assets/*.txt",
+    "assets/*.yaml",
+    "assets/*.yml",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
